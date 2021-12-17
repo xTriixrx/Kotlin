@@ -1,7 +1,7 @@
 # Kotlin Playground
 
 <p align="center">
-Working on learning Kotlin using TutorialPoint's Kotlin Beginner [Tutorial](https://www.tutorialspoint.com/kotlin/index.htm).
+Working on learning Kotlin using TutorialPoint's Kotlin Beginner <a href=https://www.tutorialspoint.com/kotlin/index.htm>Tutorial</a>.
 </p>
 
 <p align="center">
