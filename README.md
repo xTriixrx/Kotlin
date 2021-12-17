@@ -1,8 +1,7 @@
 # Kotlin Playground
 
 <p align="center">
-Working on learning Kotlin using TutorialPoint.
-Link: https://www.tutorialspoint.com/kotlin/kotlin_keywords.htm
+Working on learning Kotlin using TutorialPoint's Kotlin Beginner [Tutorial](https://www.tutorialspoint.com/kotlin/index.htm).
 </p>
 
 <p align="center">
