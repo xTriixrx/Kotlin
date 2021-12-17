@@ -1,0 +1,21 @@
+Kotlin Hard Keywords
+Following is a list of hard keywords and they cannot be used as identifiers
+
+as as? break class continue do else false for fun if in !in interface
+is !is null object package return super this throw true try typealias typeof
+val var when while
+
+Kotlin Soft Keywords
+Following is the list of keywords (soft) in the context when 
+they are applicable and can be used as identifiers in other contexts:
+
+by catch constructor delegate dynamic field file finally
+get import init param property receiver set setparam value where
+
+Kotlin Modifier Keywords
+Following is the list of tokens which act as keywords in modifier lists of
+declarations and can be used as identifiers in other contexts
+
+actual abstract annotation companion const crossinline data enum expect external
+final infix inline inner internal lateinit noinline open operator out override
+private protected public reified sealed suspended tailrec vararg
