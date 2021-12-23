@@ -494,3 +494,11 @@ fun rangesFunc()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
+
+/**
+ * 
+ */
+fun functionsFunc()
+{
+
+}
