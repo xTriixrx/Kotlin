@@ -17,6 +17,9 @@ val MAX_LINE_OUT = 100
  */
 fun main(args: Array<String>)
 {
+    println("main started.")
+    println()
+
     variablesFunc()
 
     dataTypeFunc()
@@ -43,7 +46,14 @@ fun main(args: Array<String>)
 
     breakAndContinueControlFlowFunc()
 
-    args.forEach{ print("$it ") }
+    if (args.isNotEmpty())
+    {
+        args.forEach{ print("$it ") }
+        println()
+        println()
+    }
+
+    println("main finished.")
 }
 
 /**
@@ -56,7 +66,9 @@ fun main(args: Array<String>)
  */
 fun variablesFunc()
 {
-    println("variablesFunc")
+    println("variablesFunc started.")
+    println()
+
     // val variables are read-only, and should only be used to define constants that will remain the same
     val name = "Vincent"
     
@@ -69,6 +81,11 @@ fun variablesFunc()
         Kotlin variable can not have any white space or other control characters.
         Kotlin variable can not have names like var, val, String, Int because they are reserved keywords in Kotlin."""
     println(raw)
+
+    println()
+    println("variablesFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -85,14 +102,15 @@ fun variablesFunc()
  */
 fun dataTypeFunc()
 {
+    println("dataTypeFunc started.")
+    println()
+
     var byteType: Byte = 0x1 // 8 bit
     var intType: Int = 10000 // 32 bit
     var shortType: Short = 0xA // 16 bit
     var longType: Long = 100000L // 64 bit
     var floatType: Float = 10.123F // 32 bit
     var doubleType: Double = 10.123 // 64 bit
-
-    println("dataTypeFunc")
 
     println("Byte type value: $byteType")
     println("Int type value: $intType")
@@ -116,6 +134,11 @@ fun dataTypeFunc()
 
     print(escapedString)
     println(rawString)
+
+    println()
+    println("dataTypeFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -125,7 +148,8 @@ fun dataTypeFunc()
  */
 fun operatorsFunc()
 {
-    println("Kotlin Operators")
+    println("operatorsFunc started.")
+    println()
 
     println("Arithmetic Operators: +, -, *, /, %")
     // Arithmetic Operators: +, -, *, /, %
@@ -202,6 +226,10 @@ fun operatorsFunc()
     println("x.or(y) = " + x.or(y)) // 61 = 0011 1101
     println("x.xor(y) = " + x.xor(y)) // 49 = 0011 0001
     println("x.inv() = " + x.inv()) // -61 1100 0011
+
+    println()
+    println("operatorsFunc finished.")
+
     println()
     println("-".repeat(MAX_LINE_OUT))
     println()
@@ -213,6 +241,9 @@ fun operatorsFunc()
  */
 fun booleanFunc()
 {
+    println("booleanFunc started.")
+    println()
+
     // Kotlin boolean operators: &&, ||, !
     var x: Boolean = true
     var y: Boolean = false
@@ -231,7 +262,9 @@ fun booleanFunc()
     println("x.or(y) = " + x.or(y))
     println("x.xor(y) = " + x.xor(y))
     println("x.not() = " + x.not())
+
     println()
+    println("booleanFunc finished.")
 
     println()
     println("-".repeat(MAX_LINE_OUT))
@@ -246,6 +279,9 @@ fun booleanFunc()
  */
 fun stringsFunc()
 {
+    println("stringsFunc started.")
+    println()
+
     // Kotlin string templates are pieces of code that are evaluated and whose results are interpolated into the string.
     // A template expression starts with a dollar sign ($) and may consist of either a name or an expression.
 
@@ -300,6 +336,9 @@ fun stringsFunc()
     // Kotlin toString() returns a string representation of an object
 
     println()
+    println("stringsFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -312,6 +351,9 @@ fun stringsFunc()
  */
 fun arrayFunc()
 {
+    println("arrayFunc started.")
+    println()
+
     // To create an array in Kotlin, we use the arrayOf() function, and place the values in a comma-separated list
     var fruits = arrayOf("Apple", "Mango", "Banana", "Orange")
     val duplicateFruits = arrayOf("Apple", "Mango", "Banana", "Orange", "Apple")
@@ -410,6 +452,9 @@ fun arrayFunc()
     println("Fruits is empty: ${fruits.isEmpty()}")
 
     println()
+    println("arrayFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -421,6 +466,9 @@ fun arrayFunc()
  */
 fun rangesFunc()
 {
+    println("rangesFunc started.")
+    println()
+
     // 1..10 Range of integers starting from 1 to 10
     // a..z Range of characters starting from a to z
     // A..Z Range of capital characters starting from A to Z
@@ -503,6 +551,9 @@ fun rangesFunc()
     println("b.count() - ${b.count()}")
 
     println()
+    println("rangesFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -521,6 +572,9 @@ fun rangesFunc()
  */
 fun functionsFunc()
 {
+    println("functionsFunc started.")
+    println()
+
     val a = 10
     val b = 20
     var result = 0
@@ -574,6 +628,9 @@ fun functionsFunc()
     // of higher order functions. The inline function tells the compiler to copy parameters and functions to the call site.
     val lambda = {println("Inline function parameter")}
     myInlineFunction(lambda)
+
+    println()
+    println("functionsFunc finished.")
 
     println()
     println("-".repeat(MAX_LINE_OUT))
@@ -653,6 +710,9 @@ fun times(a: Int, b: Int) = a * b
  */
 fun ifElseControlFlowFunc()
 {
+    println("ifElseControlFlowFunc started.")
+    println()
+
     val value: Int = 2
     val condition: Boolean = true
 
@@ -692,6 +752,9 @@ fun ifElseControlFlowFunc()
     }
 
     println()
+    println("ifElseControlFlowFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -705,6 +768,9 @@ fun ifElseControlFlowFunc()
  */
 fun whenControlFlowFunc()
 {
+    println("whenControlFlowFunc started.")
+    println()
+
     val day = 2
     val x = 20
     val y = 10
@@ -757,6 +823,9 @@ fun whenControlFlowFunc()
     }
 
     println()
+    println("whenControlFlowFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -769,6 +838,9 @@ fun whenControlFlowFunc()
  */
 fun forControlFlowFunc()
 {
+    println("forControlFlowFunc started.")
+    println()
+
     var fruits = arrayOf("Orange", "Apple", "Mango", "Banana")
     // Kotlin Ranges provide an iterator, so we can iterate through a range using a for loop
     for (item in 1..5)
@@ -799,6 +871,9 @@ fun forControlFlowFunc()
     println()
 
     println()
+    println("forControlFlowFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -809,6 +884,9 @@ fun forControlFlowFunc()
  */
 fun whileControlFlowFunc()
 {
+    println("whileControlFlowFunc started.")
+    println()
+
     var i = 5;
     var condition: Boolean = false
 
@@ -832,6 +910,9 @@ fun whileControlFlowFunc()
     } while (condition)
 
     println()
+    println("whileControlFlowFunc finished.")
+
+    println()
     println("-".repeat(MAX_LINE_OUT))
     println()
 }
@@ -842,6 +923,9 @@ fun whileControlFlowFunc()
  */
 fun breakAndContinueControlFlowFunc()
 {
+    println("breakAndContinueControlFlowFunc started.")
+    println()
+
     var i = 0
     val test: Boolean = true
 
@@ -913,6 +997,9 @@ fun breakAndContinueControlFlowFunc()
             println("i = $i and j = $j")
         }
     }
+
+    println()
+    println("breakAndContinueControlFlowFunc finished.")
 
     println()
     println("-".repeat(MAX_LINE_OUT))
