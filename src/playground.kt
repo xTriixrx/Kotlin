@@ -48,6 +48,8 @@ fun main(args: Array<String>)
 
     collectionsFunc()
 
+    classesFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
