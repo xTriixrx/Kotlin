@@ -50,6 +50,8 @@ fun main(args: Array<String>)
 
     classesFunc()
 
+    constructorsFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
