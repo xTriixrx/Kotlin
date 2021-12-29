@@ -1155,7 +1155,7 @@ fun listsFunc()
     val groupResult = numList.groupBy { it % 3 }
     println("Result of groupBy 'it % 3': $groupResult")
 
-    // We can use map() method to map all elements using the providied function
+    // We can use map() method to map all elements using the provided function
     val mapResult = numList.map { it / 3 }
     println("Result of map 'it / 3': $mapResult")
 
@@ -1187,12 +1187,133 @@ fun listsFunc()
     println()
 }
 
+/**
+ * Kotlin sets are an unordered collection of items. A Kotlin set can be either mutable (mutableSetOf) or read-only
+ * (setOf). Kotlin mutable or immutable sets do not allow duplicate elements.
+ */
 fun setsFunc()
 {
     println("setsFunc started.")
     println()
 
+    // For set creation, use the standard library functions setOf() for read-only sets and mutableSetOf() for mutable
+    // sets
+    val theSet = setOf("one", "two", "three", "four")
+    println("theSet - $theSet")
+    val theMutableSet = mutableSetOf("one", "two", "three", "four")
+    println("theMutableSet - $theMutableSet")
 
+    // There are various ways to loop through a Kotlin set:
+    // Using Iterator
+    val itr = theSet.iterator()
+    while (itr.hasNext())
+    {
+        print("${itr.next()} ")
+    }
+    println()
+
+    // Using for loop
+    for (value in theSet)
+    {
+        print("$value ")
+    }
+    println()
+
+    // Using forEach (Note: here it works like this operator in Java)
+    theSet.forEach { print("$it ") }
+    println()
+
+    // We can use the size property to get the total number of elements in a set
+    println("Size of the set: ${theSet.size}")
+
+    // The 'in' operator can be used to check the existence of an element in a set
+    if ("two" in theSet)
+    {
+        println("Two is in the set.")
+    }
+
+    // The contain() method can also be used to check the existence of an element in a set
+    if (theSet.contains("two"))
+    {
+        println("Two is in the set.")
+    }
+
+    // The isEmpty() method returns true if the collection is empty (contains no elements), false otherwise.
+    if (!theSet.isEmpty())
+    {
+        println("This set is not empty.")
+    }
+
+    // The indexOf() method returns the index of the first occurrence of the specified element in the set, or -1
+    // if the specified element is not contained in the set
+    println("Index of 'two': ${theSet.indexOf("two")}")
+
+    // The elementAt() method can be used to get the element at the specified index in the set
+    println("Element at 3rd position ${theSet.elementAt(2)}")
+
+    // We can use + operator to add two or more lists into a single set. This will add the second set into the first
+    // set.
+    val firstSet = setOf("one", "two", "three")
+    val secondSet = setOf("four", "five", "six")
+    val resultSet = firstSet + secondSet
+    println("Result of list addition: $resultSet")
+
+    // We can use the - operator to subtract a set from another set. This operation will remove the common elements
+    // from the first list and will return the result.
+    val thirdSet = setOf("one", "five", "six")
+    val subResultSet = firstSet - thirdSet
+    println("Result of list subtraction: $subResultSet")
+
+    // We can use filterNotNull() method to remove null elements from a Kotlin set
+    val nullSet = setOf("one", "two", null, "four", "five")
+    val nullRemoveResultSet = nullSet.filterNotNull()
+    println("Result of null element removal: $nullRemoveResultSet")
+
+    // We can use sorted() to sort elements in ascending order or sortedDescending() to sort the set elements in decending
+    // order
+    val numSet = setOf(10, 20, 30, 31, 40, 50, -1, 0)
+    println("Ascending sorted list: ${numSet.sorted()}")
+    println("Descending sorted list: ${numSet.sortedDescending()}")
+
+    // We can use filter() to filter out the elements matching with the given predicate
+    val filterResult = numSet.filter { it > 30 }
+    println("Result of filter where element must be greater than 30: $filterResult")
+
+    // We can use the drop() method to drop the first N elements from a list
+    val dropResult = numSet.drop(3)
+    println("Result of dropping first 3 elements: $dropResult")
+
+    // We can use groupBy() method to group the elements matching with the given predicate
+    val groupResult = numSet.groupBy { it % 3 }
+    println("Result of groupBy 'it % 3': $groupResult")
+
+    // We can use map() method to map all elements using the provided function
+    val mapResult = numSet.map { it / 3 }
+    println("Result of map 'it / 3': $mapResult")
+
+    // We can use chunked() method to create chunks of the given size from a set.
+    val chunkedResult = numSet.chunked(3)
+    println("Result of chunked(3): $chunkedResult")
+
+    // We can use windowed() method to a set of element ranges by moving a sliding window of a given size of a
+    // collection of elements
+    val windowedResult = numSet.windowed(3)
+    println("Result of windowed(3): $windowedResult")
+
+    // By default, the sliding window moves one step further each time but we can change that by passing a custom step value:
+    val windowedStepResult = numSet.windowed(3, 3)
+    println("Result of windowed(3, 3): $windowedStepResult")
+
+    // We can create mutable set using mutableSetOf(), later we can use add() to add more elements in the same set, and
+    // we can use remove() to remove the elements from the set.
+    val mutableSet = mutableSetOf(10, 20, 30)
+    mutableSet.add(40)
+    mutableSet.add(50)
+
+    println("Mutable Set after add: $mutableSet")
+    mutableSet.remove(10)
+    mutableSet.remove(30)
+    println("Mutable Set after remove: $mutableSet")
 
     println()
     println("setsFunc finished.")
