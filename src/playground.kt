@@ -1047,7 +1047,6 @@ fun collectionsFunc()
 
     mapsFunc()
 
-    println()
     println("collectionsFunc finished.")
 
     println()
@@ -1320,12 +1319,129 @@ fun setsFunc()
     println()
 }
 
+/**
+ * Kotlin map is a collection of key/value pairs, where each key is unique, and it can only be associated with one value.
+ * The same value can be associated with multiple keys though. We can declare the keys and values to be any type; there are
+ * no restrictions. A Kotlin map can be either mutable (mutableMapOf) or read-only (mapOf). Maps are also known as dictionaries
+ * or associative arrays in other programming languages.
+ */
 fun mapsFunc()
 {
     println("mapsFunc started.")
     println()
 
+    // For map creation, use the standard library functions mapOf() for read-only maps and mutableMapOf() for mutable maps.
+    // Note: A read-only view of a mutable map can be obtained by casting it to Map.
+    val theMap = mapOf("one" to 1, "two" to 2, "three" to 3, "four" to 4)
+    println("theMap - $theMap")
+    val theMutableMap = mutableSetOf("one" to 1, "two" to 2, "three" to 3, "four" to 4)
+    println("theMutableMap - $theMutableMap")
 
+    // A Kotlin map can be created from Java's HashMap
+    val hashMap = HashMap<String, Int>()
+    hashMap["one"] = 1
+    hashMap["two"] = 2
+    hashMap["three"] = 3
+    hashMap["four"] = 4
+    println("hashMap - $hashMap")
+
+    // We can use Pair() to create key/value pairs
+    val pairMap = mapOf(Pair("one", 1), Pair("two", 2), Pair("three", 3))
+    println("pairMap - $pairMap")
+
+    // Kotlin map has properties to get all entries, keys, and values of the map
+    println("theMap entries: ${theMap.entries}")
+    println("theMap keys: ${theMap.keys}")
+    println("theMap values: ${theMap.values}")
+
+    // There are various ways to loop through a Kotlin Map:
+    // Iterator
+    val itr = theMap.iterator()
+    while (itr.hasNext())
+    {
+        val entry = itr.next()
+        println("${entry.key} = ${entry.value}")
+    }
+
+    // Using for loop
+    for ((key, value) in theMap)
+    {
+        println("Key: $key, Value: $value")
+    }
+
+    // Using forEach (Note: here it works like this operator in Java)
+    theMap.forEach { (key, value) -> println("Key: $key, Value: $value") }
+    println()
+
+    // We can use the size property or count() method to get the total number of elements in a map
+    println("Size of the Map is ${theMap.size}")
+    println("Size of the Map is ${theMap.count()}")
+
+    // The containsKey() checks if the map contains a key whereas the containsValue() checks if the map contains a value
+    if (theMap.containsKey("two"))
+    {
+        println("The map contains a key of 'two'.")
+    }
+
+    if (!theMap.containsValue(5))
+    {
+        println("The map does not contain a value of '5'.")
+    }
+
+    // The isEmpty() method returns true if the collection is empty
+    if (!theMap.isEmpty())
+    {
+        println("The map is not empty.")
+    }
+
+    // The get() method can be used to get the value corresponding to a given key.
+    println("The value for key two ${theMap.get("two")}")
+    println("The value for key two ${theMap["two"]}")
+
+    // We can use + operator to add two or more maps into a single set. This will the second map into the first map,
+    // discarding duplicate elements. If there are duplicate keys in two maps, then the second maps's key will override
+    // the previous map key
+    val firstMap =  mapOf("one" to 1, "two" to 2, "three" to 3)
+    val secondMap = mapOf("one" to 10, "four" to 4)
+    val resultMap = firstMap + secondMap
+    println("Result of map addition: $resultMap")
+
+    // We can use - operator to subtract a list from a mpa. This operation will remove all keys of the list from the map
+    // and will return the result.
+    val theKeyList = listOf("one", "four")
+    val subResultList = theMap - theKeyList
+    println("Result of map subtraction with key list: $subResultList")
+
+    // We can use remove() method to remove the element from a mutable map, or we can use minus-assign (-=) operator to
+    // perform the same operation
+    val mutableMap = mutableMapOf("one" to 1, "two" to 2, "three" to 3, "four" to 4)
+    mutableMap.remove("two")
+    println("Mutable map removed of key 'two': $mutableMap")
+    mutableMap -= listOf("three")
+    println("Mutable map -= listOf(\"three\"): $mutableMap")
+
+    // We can use toSortedMap() to sort the elements in ascending order You can also create a sorted map with the
+    // given key/values using sortedMapOf() in place of mapOf().
+    println("Ascending sorted map: ${theMap.toSortedMap()}")
+
+    // We can use either filterKeys() or filterValues() methods to filter out the entries
+    // We can also use filter() to filter ot the elements matching both key/value
+    println("Filter map.filterValues{ it > 2}: ${theMap.filterValues { it > 2 }}")
+    println("Filter map.filterKeys{ it == \"two\"}: ${theMap.filterKeys { it == "two" }}")
+    println("Filter map.filter{ it.key == \"two\" || it.value == 4}: ${theMap.filter{ it.key == "two" || it.value == 4}}")
+
+    // We can use map() to map all elements using the provided function
+    println("Map map.map{(k,v) -> \"Key is \$k, Value is \$v\"}: ${theMap.map{ (k, v) -> "Key is $k, Value is $v" }}")
+
+    // We can create mutable maps using mutableMapOf(), later we can use put to add more elements in the same map, and
+    // we can use remove() to remove elements from the map using a key.
+    val mutMap = mutableMapOf("one" to 1, "two" to 2, "three" to 3, "four" to 4)
+    mutMap.put("four", 4)
+    println("mutMap after mutMap.put(\"four\", 4): $mutMap")
+    mutMap["five"] = 5
+    println("mutMap after mutMap[\"five\"] = 5: $mutMap")
+    mutMap.remove("two")
+    println("mutMap after mutMap.remove(\"two\"): $mutMap")
 
     println()
     println("mapsFunc finished.")
