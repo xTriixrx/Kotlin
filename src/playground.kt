@@ -64,6 +64,8 @@ fun main(args: Array<String>)
 
     dataClassesFunc()
 
+    sealedClassesFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
