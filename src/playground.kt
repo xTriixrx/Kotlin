@@ -52,6 +52,8 @@ fun main(args: Array<String>)
 
     constructorsFunc()
 
+    inheritanceFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
