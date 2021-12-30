@@ -60,6 +60,8 @@ fun main(args: Array<String>)
 
     visibilityControlFunc()
 
+    extensionFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
