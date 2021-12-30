@@ -62,6 +62,8 @@ fun main(args: Array<String>)
 
     extensionFunc()
 
+    dataClassesFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
