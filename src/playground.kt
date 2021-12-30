@@ -56,6 +56,8 @@ fun main(args: Array<String>)
 
     abstractFunc()
 
+    interfaceFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
