@@ -54,6 +54,8 @@ fun main(args: Array<String>)
 
     inheritanceFunc()
 
+    abstractFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
