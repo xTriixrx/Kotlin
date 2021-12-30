@@ -58,6 +58,8 @@ fun main(args: Array<String>)
 
     interfaceFunc()
 
+    visibilityControlFunc()
+
     if (args.isNotEmpty())
     {
         args.forEach{ print("$it ") }
